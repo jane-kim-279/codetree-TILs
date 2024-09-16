@@ -15,8 +15,8 @@ public class Main {
         int b = sc.nextInt();
         int sum = 0;
         for(int i=a; i<=b; i++) {
-            if(isPrime(i)) sum += i;
             if(a==b) continue;
+            if(isPrime(i)) sum += i;
         }
         System.out.print(sum);
     }
