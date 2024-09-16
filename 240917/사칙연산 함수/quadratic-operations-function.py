@@ -1,3 +1,5 @@
+import math
+
 a, o, c = input().split()
 a = int(a)
 c = int(c)
@@ -9,6 +11,6 @@ elif o == "-":
 elif o == "*":
     print(a, "*", c, "=", a*c)
 elif o == "/":
-    print(a, "/", c, "=", a/c)
+    print(a, "/", c, "=", math.floor(a/c))
 else:
     print("False")
