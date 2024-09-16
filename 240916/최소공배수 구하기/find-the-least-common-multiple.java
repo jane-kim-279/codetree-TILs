@@ -2,20 +2,19 @@ import java.util.*;
 import java.lang.*;
 
 public class Main {
-    public static int GetCommDiv(int n, int m) {
-        if(n % m == 0) {
-            return m;
+    public static void findLCM(int n, int m) {
+        int gcd = 0;
+        for(int i = 1; i <= Math.min(n, m); i++) {
+            if(n % i == 0 && m % i == 0)
+                gcd = i;
         }
-        return GetCommDiv(m, n%m);
+        System.out.print(n * m / gcd);
     }
-    public static int GetCommMultiple(int n, int m) {
-        int commDiv = GetCommDiv(n, m);
-        return n * m / commDiv;
-    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        System.out.print(GetCommMultiple(n, m));
+        findLCM(n, m);
     }
 }
