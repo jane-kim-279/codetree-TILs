@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     public static boolean isPrime(int num) {
+        if(num == 1) return false;
         for(int i=2; i<num; i++) {
             if(num % i == 0) {
                 return false;
@@ -15,7 +16,6 @@ public class Main {
         int b = sc.nextInt();
         int sum = 0;
         for(int i=a; i<=b; i++) {
-            if(a==b) continue;
             if(isPrime(i)) sum += i;
         }
         System.out.print(sum);
