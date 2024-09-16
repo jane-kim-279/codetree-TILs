@@ -16,6 +16,7 @@ public class Main {
         int sum = 0;
         for(int i=a; i<=b; i++) {
             if(isPrime(i)) sum += i;
+            if(a==b) continue;
         }
         System.out.print(sum);
     }
