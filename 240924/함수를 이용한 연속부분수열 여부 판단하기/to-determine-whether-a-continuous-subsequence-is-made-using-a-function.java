@@ -10,38 +10,38 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         
-        int n1 = Integer.parseInt(st.nextToken());
-        int n2 = Integer.parseInt(st.nextToken());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
 
-        A = new int[n1];
-        B = new int[n2];
+        A = new int[a];
+        B = new int[b];
 
         st = new StringTokenizer(br.readLine());
-        for(int i=0; i<n1; i++) {
+        for(int i=0; i<a; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
         st = new StringTokenizer(br.readLine());
-        for(int i=0; i<n2; i++) {
+        for(int i=0; i<b; i++) {
             B[i] = Integer.parseInt(st.nextToken());
         }
         
-        if(checkArr(A, B)) System.out.println("Yes");
+        if(isSubsequence(A, a, B, b)) System.out.println("Yes");
         else System.out.println("No");
     }
 
-    static boolean checkArr(int[] A, int[] B) {
-        boolean flag = false;
-        for(int i=0; i<A.length; i++) {
-            if(A[i] == B[0]) {
-                for(int j=0; j<B.length; j++) {
-                    if(A[i+j] == B[j]) {
-                        flag = true;
-                    } else flag = false;
+    static boolean isSubsequence(int[] A, int a, int[] B, int b) {
+        if(b>a) return false;
+        for(int i=0; i<=a-b; i++) {
+            boolean flag = true;
+            for(int j=0; j<b; j++) {
+                if(A[i+j] != B[j]) {
+                    flag = false;
+                    break;
                 }
-                return flag;
             }
+            if(flag) return flag;
         }
-        return flag;
+        return false;
     }
 }
