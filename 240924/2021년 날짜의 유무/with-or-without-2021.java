@@ -21,7 +21,7 @@ public class Main {
             if(1 <= D && D <= 31) flag = true; 
         } else if(Arrays.asList(shortM).contains(M)) {
             if(1<=D && D<=30) flag = true;
-        } else {
+        } else if(M == "2"){
             if(1<=D && D<=28) flag = true;
         }
         return flag;
